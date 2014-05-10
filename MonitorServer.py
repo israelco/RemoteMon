@@ -10,11 +10,10 @@ tcp.listen(1)
 print "Waiting Connections..."
 con,addr = tcp.accept()
 print "Connection from  ",addr
-
+print "Sending Data"
 while 1:
 	#print 'Para sair use CTRL+X\n'
 	rcv = con.recv(5)
-	print rcv
 	cpu = str(psutil.cpu_percent(interval=1))
 	memoria = str(psutil.phymem_usage().percent)
 	msg = cpu + "|" + memoria
